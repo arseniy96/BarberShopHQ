@@ -15,6 +15,20 @@ class Barber < ActiveRecord::Base
 end
 
 get '/' do
-  @barbers = Barber.all
+  @barbers = Barber.order "created_at DESC"
 	erb :index
+end
+
+get '/visit' do
+	erb :visit
+end
+
+post '/visit' do
+	@user_name = params[:user_name]
+	@phone = params[:phone]
+	@date_time = params[:date_time]
+	@barber = params[:barber]
+	@color = params[:color]
+
+	ebr "Спасибо, #{@user_name}. Вы записаны на #{@date_time} к парикмахеру #{@barber}"
 end
