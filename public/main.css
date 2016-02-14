@@ -1,0 +1,39 @@
+html,
+body {
+    height: 100%;
+    font-family: Georgia;
+    background-color: #f5f5f5;
+}
+
+.container {
+    min-height: 100%;
+    position: relative;
+}
+
+.container .c123 {
+    padding-bottom: 150px;
+}
+
+.container footer {
+    background: url('http://usachi.ru/bitrix/templates/main_new/images/dark_gray_bg.gif');
+    color: #fffccc;
+    position: absolute;
+    width: 100%;
+    padding: 15px 10px;
+    bottom: 20px;
+    left: 0;
+}
+
+.visit-form .form-group {
+    width: 22%;
+}
+
+.form-group {
+    width: 30%;
+}
+
+.form-inline .form-group {
+    width: 15%;
+}
+
+a { color: cornflowerblue; }
