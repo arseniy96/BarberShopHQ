@@ -1,6 +1,4 @@
-<html>
 <head>
-  <title>Записаться</title>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -19,15 +17,18 @@
 <form action="/visit" method="POST" role="form" class="visit-form">
   <div class="form-group">
     <label class="sr-only" for="exampleInputName">Name</label>
-    <input name="client[name]" type="text" class="form-control" id="exampleInputName" placeholder="Введите имя" value="">
+    <input name="client[name]" type="text" class="form-control" id="exampleInputName" placeholder="Введите имя"
+           value="<%= @c.name %>">
   </div>
   <div class="form-group">
     <label class="sr-only" for="exampleInputPhone">Phone</label>
-    <input name="client[phone]" type="text" class="form-control" id="exampleInputPhone" placeholder="Введите телефон" value="">
+    <input name="client[phone]" type="text" class="form-control" id="exampleInputPhone" placeholder="Введите телефон"
+           value="<%= @c.phone %>">
   </div>
   <div class="form-group">
     <label class="sr-only" for="exampleInputDate">Date</label>
-    <input name="client[datestamp]" id="datetimepicker" type="text" class="form-control" placeholder="Введите дату и время" value="">
+    <input name="client[datestamp]" id="datetimepicker" type="text" class="form-control" placeholder="Введите дату и время"
+           value="<%= @c.datestamp %>">
   </div>
   <div class="form-group">
     <p>Выберите парикмахера:</p>
@@ -57,4 +58,3 @@
 </form>
 
 </body>
-</html>
