@@ -33,5 +33,7 @@ post '/visit' do
 	@barber = params[:barber]
 	@color = params[:color]
 
-	ebr "Спасибо, #{@user_name}. Вы записаны на #{@date_time} к парикмахеру #{@barber}"
+  Client.create :name => @user_name, :phone => @phone, :datestamp => @date_time, :barber => @barber, :color => @color
+
+	erb "Спасибо, #{@user_name}. Вы записаны на #{@date_time} к парикмахеру #{@barber}"
 end
