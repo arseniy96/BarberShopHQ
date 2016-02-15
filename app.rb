@@ -7,11 +7,12 @@ require 'sinatra/activerecord'
 set :database, "sqlite3:barbershop.db"
 
 class Client < ActiveRecord::Base
-
 end
 
 class Barber < ActiveRecord::Base
+end
 
+class Contact < ActiveRecord::Base
 end
 
 before do
@@ -36,4 +37,15 @@ post '/visit' do
   Client.create :name => @user_name, :phone => @phone, :datestamp => @date_time, :barber => @barber, :color => @color
 
 	erb "Спасибо, #{@user_name}. Вы записаны на #{@date_time} к парикмахеру #{@barber}"
+end
+
+get '/feedback' do
+  erb :feedback
+end
+
+post '/feedback' do
+	@email = params[:email]
+  @mes = params[:mes]
+
+
 end

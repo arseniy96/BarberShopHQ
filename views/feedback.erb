@@ -1,0 +1,13 @@
+<h2>Обратная связь</h2>
+
+<form action="/feedback" method="POST" role="form">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail">Name</label>
+    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Введите email" name="email" value="<%=@email%>">
+  </div>
+  <div class="form-group">
+    <textarea class="form-control" rows="3" name="mes"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Отравить</button>
+</form>
