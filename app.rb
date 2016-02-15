@@ -28,15 +28,10 @@ get '/visit' do
 end
 
 post '/visit' do
-	@user_name = params[:user_name]
-	@phone = params[:phone]
-	@date_time = params[:date_time]
-	@barber = params[:barber]
-	@color = params[:color]
 
-  Client.create :name => @user_name, :phone => @phone, :datestamp => @date_time, :barber => @barber, :color => @color
+  Client.create params[:client]
 
-	erb "Спасибо, #{@user_name}. Вы записаны на #{@date_time} к парикмахеру #{@barber}"
+	erb "Спасибо. Вы записались!"
 end
 
 get '/feedback' do
@@ -47,5 +42,7 @@ post '/feedback' do
 	@email = params[:email]
   @mes = params[:mes]
 
+	Contact.create :email => @email, :message => @mes
 
+  redirect '/feedback'
 end
