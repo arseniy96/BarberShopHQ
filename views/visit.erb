@@ -34,7 +34,7 @@
     <p>Выберите парикмахера:</p>
     <select class="form-control" name="client[barber]">
       <% @barbers.each do |row| %>
-          <option > <%= row['name'] %> </option>
+          <option <%= @c.barber == row['name'] ? 'selected' : '' %>> <%= row['name'] %> </option>
       <% end %>
     </select>
   </div>
